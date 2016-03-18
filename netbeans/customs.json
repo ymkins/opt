@@ -1,0 +1,37 @@
+{
+    "elements": {
+        "uib-accordion": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "uib-accordion-group": {
+            "attributes": {
+                "class": {},
+                "is-open": {},
+                "heading": {}
+            }
+        },
+        "uib-tab": {
+            "attributes": {
+                "class": {},
+                "index": {},
+                "heading": {}
+            }
+        },
+        "uib-tabset": {
+            "attributes": {
+                "active": {},
+                "class": {}
+            }
+        }
+    },
+    "attributes": {
+        "uib-btn-checkbox": {},
+        "uib-btn-radio": {},
+        "uib-collapse": {},
+        "uib-dropdown": {},
+        "uib-dropdown-toggle": {},
+        "on-tap": {}
+    }
+}
