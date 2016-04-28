@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://habrahabr.ru/post/49665/
 
 prefix="/var/mail/dummy-sendmail"
 date=`date \+\%Y\%m\%d\%H\%M\%N`
