@@ -20,6 +20,12 @@ git-compare.sh
 Compare commits between two git branches
 http://rackerhacker.com/2012/03/15/compare-commits-between-two-git-branches/
 
+toggle-synaptics-touchpad.sh
+---------------------------
+
+Toggle synaptics touchpad with _synclient_
+http://ubuntuforums.org/showthread.php?t=1401645&p=8794054#post8794054
+
 wmcells.sh
 ----------
 
