@@ -1,0 +1,30 @@
+"*":
+  core:
+    disabledPackages: [
+      "markdown-preview"
+      "editorconfig"
+      "language-sass"
+      "language-ruby-on-rails"
+      "language-toml"
+      "language-mustache"
+      "welcome"
+    ]
+  editor:
+    preferredLineLength: 120
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "git-diff": {}
+  linter:
+    errorPanelHeight: 24
+  welcome:
+    showOnStartup: false
+".source.ts":
+  editor:
+    preferredLineLength: 120
+    showIndentGuide: true
+    tabLength: 4
+".source.tsx":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4

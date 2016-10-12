@@ -1,0 +1,3 @@
+'.editor:not(.mini)':
+  'alt-ctrl-l': 'editor:auto-indent'
+  'alt-cmd-l': 'editor:auto-indent'
