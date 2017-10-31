@@ -1,21 +1,33 @@
 #!/usr/bin/env bash
 #
-# https://askubuntu.com/questions/850997/no-caps-lock-indicator-light/851093
-# http://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin
+# inspired by
+#   https://askubuntu.com/questions/850997/no-caps-lock-indicator-light/851093
+#   http://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin
+#
+# by default produce one of (cns Cns cNs CNs cnS CnS cNS CNS)
+# but can return one of positional parameters
+# for example, try lights: ⚪ ⚫ ✾ ✧ ✺ ✼ ✽
+# $ xleds '✧✧✧' '✺✧✧' '✧✺✧' '✺✺✧' '✧✧✺' '✺✧✺' '✧✺✺' '✺✺✺'
+#
+# fix XKB indicators delay in case of immedentialy call
+#  sleep 0.2
 
-off='⚪'
-on='⚫'
-
-caps=$off
-num=$off
-scroll=$off
-
-led_str=$(xset -q)
+xset=$(xset q)
 caps_lock='Caps Lock:   on'
 num_lock='Num Lock:    on'
 scroll_lock='Scroll Lock: on'
-[ -z "${led_str##*$caps_lock*}" ] && caps=$on
-[ -z "${led_str##*$num_lock*}" ] && num=$on
-[ -z "${led_str##*$scroll_lock*}" ] && scroll=$on
+leds=0
+[ -z "${xset##*$caps_lock*}" ] && (( leds=leds+1 ))
+[ -z "${xset##*$num_lock*}" ] && (( leds=leds+2 ))
+[ -z "${xset##*$scroll_lock*}" ] && (( leds=leds+4 ))
 
-echo  ${caps}${num}${scroll}
+format=('cns' 'Cns' 'cNs' 'CNs' 'cnS' 'CnS' 'cNS' 'CNS')
+[ $8 ] && format=("$@")
+echo  ${format[$leds]}
+
+# cat <<EOF
+# <txt>${format[$leds]}</txt>
+# <tool>
+# ${xset}
+# </tool>
+# EOF
